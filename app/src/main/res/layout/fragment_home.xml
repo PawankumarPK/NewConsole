@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    tools:context=".fragment.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/mLinearLayoutOne"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="10">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mAddCardview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="5"
+            android:background="@drawable/start_button_bg_color">
+
+            <TextView
+                android:id="@+id/mCore0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/start_button_bg_color"
+                android:fontFamily="@font/comfortaa_light"
+                android:gravity="center"
+                android:text="@string/core_0"
+                android:textColor="@drawable/button_text_color"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mRemoveStocks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="5">
+
+            <TextView
+                android:id="@+id/mArya"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/start_button_bg_color"
+                android:fontFamily="@font/comfortaa_light"
+                android:gravity="center"
+                android:text="@string/arya"
+                android:textColor="@drawable/button_text_color"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/mLinearLayoutTwo"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/mLinearLayoutOne"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="10">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="5">
+
+            <TextView
+                android:id="@+id/mAmro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/start_button_bg_color"
+                android:fontFamily="@font/comfortaa_light"
+                android:gravity="center"
+                android:text="@string/amro"
+                android:textColor="@drawable/button_text_color"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- <androidx.cardview.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_margin="3dp"
+             android:layout_weight="5"
+             android:visibility="invisible">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="10dp"
+                 android:fontFamily="@font/comfortaa_light"
+                 android:text="Total Stocks"
+                 android:textColor="#fff"
+                 android:textSize="20sp"
+                 android:textStyle="bold" />
+
+         </androidx.cardview.widget.CardView>
+ -->
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/mOnlineBot"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="30dp"
+        android:background="#28CE2F"
+        android:fontFamily="@font/comfortaa_light"
+        android:gravity="center"
+        android:text="Online Bot : "
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:visibility="visible" />
+
+
+</RelativeLayout>
