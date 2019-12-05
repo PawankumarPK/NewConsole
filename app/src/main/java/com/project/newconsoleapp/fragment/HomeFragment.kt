@@ -13,6 +13,8 @@ import android.view.animation.Animation
 import android.view.animation.Interpolator
 import android.view.animation.LinearInterpolator
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.project.newconsoleapp.adapter.RecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
@@ -26,41 +28,47 @@ import java.lang.Exception
 
 class HomeFragment : BaseFragment() {
 
+    private val TAG = "HomeFragment"
+    private lateinit var adapter: RecyclerViewAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         baseActivity.mToolbar.visibility = View.GONE
 
-        getOnlineBot()
-        initOnlineAnimation()
-        mCore0.setOnClickListener { core0() }
-        mArya.setOnClickListener { arya() }
-        mAmro.setOnClickListener { amro() }
+        loadRecyclerView()
+        retrofitCallbacks()
+        onlineBotAnimation()
     }
 
-    private fun getOnlineBot() {
+    private fun loadRecyclerView() {
+        adapter = RecyclerViewAdapter()
+        mRecyclerView.adapter = adapter
+        mRecyclerView.layoutManager = LinearLayoutManager(baseActivity)
+    }
+
+    private fun retrofitCallbacks() {
         val api = RetrofitClient.apiService
         val call = api.stats()
 
         call.enqueue(object : Callback<StatsModel> {
             override fun onFailure(call: Call<StatsModel>?, t: Throwable?) {
-                Toast.makeText(baseActivity, "Call Failure", Toast.LENGTH_SHORT).show()
+                toast("Response failure")
             }
-
 
             override fun onResponse(call: Call<StatsModel>?, response: Response<StatsModel>?) {
                 if (response!!.isSuccessful) {
-                    val onlineBot = response.body().count
-                    try {
-                        mOnlineBot.text = "Online Bots: $onlineBot"
-                    }catch (e: Exception){
+                    val dataList = response.body().data
+                    adapter.getDataIntoItemlist(dataList)
+                    adapter.notifyDataSetChanged()
 
-                    }
+                    val onlineBot = response.body().count
+                    mOnlineBot.text = "Online Bots: $onlineBot"
 
                 }
             }
@@ -68,22 +76,7 @@ class HomeFragment : BaseFragment() {
         })
     }
 
-    private fun core0() {
-        fragmentManager!!.beginTransaction().replace(R.id.mFrameContainer, Core0Fragment())
-            .addToBackStack(null).commit()
-    }
-
-
-    private fun arya() {
-        fragmentManager!!.beginTransaction().replace(R.id.mFrameContainer, AryaFragment())
-            .addToBackStack(null).commit()
-    }
-
-    private fun amro() {
-        fragmentManager!!.beginTransaction().replace(R.id.mFrameContainer, AmroFragment())
-            .addToBackStack(null).commit()
-    }
-    private fun initOnlineAnimation() {
+    private fun onlineBotAnimation() {
         val animation = AlphaAnimation(1f, 0f)
         animation.duration = 1000
         animation.interpolator = LinearInterpolator() as Interpolator?
