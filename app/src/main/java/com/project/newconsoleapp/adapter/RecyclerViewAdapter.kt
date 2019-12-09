@@ -49,7 +49,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
             itemView.mRecyclerTextView.text = data.mac
             itemView.setOnClickListener {
                 Toast.makeText(itemView.context, "Item is clicked ${data.mac}", Toast.LENGTH_SHORT).show()
-                
+
                 val activity = itemView.context as BaseActivity
                 val args = Bundle()
                 args.putString("mac_id", data.mac)
