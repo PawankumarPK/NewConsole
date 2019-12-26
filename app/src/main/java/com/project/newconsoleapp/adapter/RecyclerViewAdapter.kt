@@ -1,6 +1,5 @@
 package com.project.newconsoleapp.adapter
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.project.newconsoleapp.R
 import com.project.newconsoleapp.activity.BaseActivity
 import com.project.newconsoleapp.api.models.DataList
-import com.project.newconsoleapp.fragment.Core0Fragment
 import kotlinx.android.synthetic.main.view_holder.view.*
 
 

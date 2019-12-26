@@ -1,7 +1,6 @@
 package com.project.newconsoleapp.activity
 
 import com.project.newconsoleapp.api.RetrofitClient
-import com.project.newconsoleapp.fragment.HomeFragment
 import com.project.newconsoleapp.utils.Helper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

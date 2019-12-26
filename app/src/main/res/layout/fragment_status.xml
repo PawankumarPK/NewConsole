@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.Core0Fragment">
+    tools:context=".fragment.StatusFragment">
 
 
     <LinearLayout
@@ -20,14 +20,15 @@
             android:layout_margin="3dp">
 
             <TextView
+                android:id="@+id/mAmro"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
+                android:layout_height="wrap_content"
+                android:background="#fff"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="@string/mac"
-                android:textColor="@drawable/button_text_color"
-                android:textSize="18sp"
+                android:text="Mac :"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -36,8 +37,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="@string/o"
-                android:textSize="25sp" />
+                android:text="Screens"
+                android:textSize="@dimen/setDataSizes" />
 
 
         </androidx.cardview.widget.CardView>
@@ -47,74 +48,81 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_margin="3dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
-                android:fontFamily="@font/comfortaa_light"
-                android:gravity="center_horizontal"
-                android:text="@string/online_since"
-                android:textColor="#fff"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/o"
-                android:textSize="23sp" />
-
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_margin="3dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
+                android:background="#fff"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Last Update :"
-                android:textColor="#fff"
-                android:textSize="18sp"
+                android:text="Online Since :"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_margin="3dp">
-
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
-                android:fontFamily="@font/comfortaa_light"
-                android:gravity="center_horizontal"
-                android:text="Stats :"
-                android:textColor="#fff"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:id="@+id/mScreen"
+                android:id="@+id/mOnlineSince"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="null"
-                android:textSize="23sp" />
+                android:textSize="@dimen/setDataSizes" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:fontFamily="@font/comfortaa_light"
+                android:gravity="center_horizontal"
+                android:text="Last Update"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mLastUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/setDataSizes" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:fontFamily="@font/comfortaa_light"
+                android:gravity="center_horizontal"
+                android:text="Screens :"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/mStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/setDataSizes" />
 
         </androidx.cardview.widget.CardView>
 
@@ -122,23 +130,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
             android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
             android:layout_marginBottom="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
-                android:orientation="vertical">
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/comfortaa_light"
                     android:gravity="center_horizontal"
-                    android:text="Battery :"
-                    android:textColor="#fff"
+                    android:text="@string/battery"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -156,7 +165,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="5"
                         android:text="P : "
-                        android:textSize="23sp" />
+                        android:textSize="@dimen/setDataSizes" />
 
 
                     <TextView
@@ -166,17 +175,17 @@
                         android:layout_gravity="center"
                         android:layout_weight="5"
                         android:gravity="end"
-                        android:text="@string/o"
-                        android:textSize="23sp" />
+                        android:text="0"
+                        android:textSize="@dimen/setDataSizes" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="10"
                     android:gravity="center_horizontal"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="10">
 
 
                     <TextView
@@ -185,7 +194,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="5"
                         android:text="@string/soc"
-                        android:textSize="23sp" />
+                        android:textSize="@dimen/setDataSizes" />
 
 
                     <TextView
@@ -196,7 +205,7 @@
                         android:layout_weight="5"
                         android:gravity="end"
                         android:text="@string/o"
-                        android:textSize="23sp" />
+                        android:textSize="@dimen/setDataSizes" />
 
                 </LinearLayout>
 
@@ -213,7 +222,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="5"
                         android:text="V :"
-                        android:textSize="23sp" />
+                        android:textSize="@dimen/setDataSizes" />
 
 
                     <TextView
@@ -224,7 +233,7 @@
                         android:layout_weight="5"
                         android:gravity="end"
                         android:text="@string/o"
-                        android:textSize="23sp" />
+                        android:textSize="@dimen/setDataSizes" />
 
                 </LinearLayout>
 
@@ -240,8 +249,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="5"
-                        android:text="CE : "
-                        android:textSize="23sp" />
+                        android:text="@string/CE"
+                        android:textSize="@dimen/setDataSizes" />
 
 
                     <TextView
@@ -252,7 +261,7 @@
                         android:layout_weight="5"
                         android:gravity="end"
                         android:text="@string/o"
-                        android:textSize="23sp" />
+                        android:textSize="@dimen/setDataSizes" />
 
 
                 </LinearLayout>
@@ -270,7 +279,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="5"
                         android:text="I : "
-                        android:textSize="23sp" />
+                        android:textSize="@dimen/setDataSizes" />
 
 
                     <TextView
@@ -281,7 +290,7 @@
                         android:layout_weight="5"
                         android:gravity="end"
                         android:text="@string/o"
-                        android:textSize="23sp" />
+                        android:textSize="@dimen/setDataSizes" />
 
                 </LinearLayout>
 

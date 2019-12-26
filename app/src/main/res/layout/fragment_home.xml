@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#80CCCCCC"
+    android:background="@color/bgColor"
     tools:context=".fragment.HomeFragment">
 
     <TextView
@@ -33,13 +33,21 @@
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="30dp"
-        android:background="#28CE2F"
+        android:background="@color/colorGreen"
         android:fontFamily="@font/comfortaa_light"
         android:gravity="center"
         android:text="Online Bot : "
         android:textColor="@color/white"
-        android:textSize="15sp"
-        android:visibility="visible" />
+        android:textSize="15sp" />
 
+    <TextView
+        android:id="@+id/mResponseError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oops, something went wrong !"
+        android:textSize="20sp"
+        android:visibility="visible"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>

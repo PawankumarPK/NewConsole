@@ -1,10 +1,9 @@
 package com.project.newconsoleapp.fragment
 
-import com.project.newconsoleapp.R
-import com.project.newconsoleapp.activity.BaseActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.project.newconsoleapp.activity.BaseActivity
 
 
 /**
@@ -21,9 +20,8 @@ open class BaseFragment : Fragment() {
         baseActivity = activity as BaseActivity
     }
 
-    fun toast(msg : Any){
-        Toast.makeText(baseActivity,msg.toString(), Toast.LENGTH_SHORT).show()
+     fun toast(msg : Any){
+        Toast.makeText(baseActivity,msg.toString(),Toast.LENGTH_SHORT).show()
     }
-
 
 }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.Core0Fragment">
+    tools:context=".fragment.StatusFragment">
 
 
     <LinearLayout
@@ -21,13 +21,13 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
+                android:layout_height="wrap_content"
+                android:background="#fff"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
                 android:text="Mac :"
-                android:textColor="@drawable/button_text_color"
-                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -51,15 +51,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
+                android:background="#fff"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="@string/online_since"
-                android:textColor="#fff"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="Online Since :"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/mOnlineSince"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -79,16 +80,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
+                android:background="#fff"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Last Update :"
-                android:textColor="#fff"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="Last Update"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
 
             <TextView
+                android:id="@+id/mLastUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -108,13 +110,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
+                android:background="#fff"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="@string/stats"
-                android:textColor="#fff"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="Screens :"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
 
             <TextView
@@ -139,8 +141,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/grey_gradients"
-                android:orientation="vertical">
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -148,7 +151,7 @@
                     android:fontFamily="@font/comfortaa_light"
                     android:gravity="center_horizontal"
                     android:text="@string/battery"
-                    android:textColor="#fff"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

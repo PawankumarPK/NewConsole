@@ -2,14 +2,14 @@
     <string name="app_name">Console</string>
 
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="amro">Amro</string>
     <string name="arya">Arya</string>
-    <string name="core_0">Core 0</string>
+    <string name="fragment">Status</string>
     <string name="home">Home</string>
     <string name="mac">Mac :</string>
     <string name="o">0</string>
+    <string name="CE">CE</string>
     <string name="soc">SOC :</string>
     <string name="online_since">Online Since :</string>
     <string name="stats">Stats :</string>

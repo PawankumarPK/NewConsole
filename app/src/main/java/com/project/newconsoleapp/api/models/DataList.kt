@@ -10,11 +10,10 @@ class DataList {
     @SerializedName("mac")
     val mac : String? = null
 
-    /*@SerializedName("joinstamp")
+    @SerializedName("joinstamp")
     var joinstamp: Int? = 0
 
     @SerializedName("updatestamp")
     var updatestamp: Int? = 0
 
-    */
 }

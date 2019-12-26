@@ -1,9 +1,6 @@
 package com.project.newconsoleapp.fragment
 
 
-import com.project.newconsoleapp.api.RetrofitClient
-import com.project.newconsoleapp.R
-import com.project.newconsoleapp.api.models.StatsModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,15 +9,17 @@ import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.Interpolator
 import android.view.animation.LinearInterpolator
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.project.newconsoleapp.R
 import com.project.newconsoleapp.adapter.RecyclerViewAdapter
+import com.project.newconsoleapp.api.RetrofitClient
+import com.project.newconsoleapp.api.models.StatsModel
+import com.project.newconsoleapp.fragment.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.Exception
 
 /**
  * Created by pawan on 27,November,2019
@@ -31,7 +30,11 @@ class HomeFragment : BaseFragment() {
     private val TAG = "HomeFragment"
     private lateinit var adapter: RecyclerViewAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -43,7 +46,7 @@ class HomeFragment : BaseFragment() {
 
         loadRecyclerView()
         retrofitCallbacks()
-        onlineBotAnimation()
+
     }
 
     private fun loadRecyclerView() {
@@ -59,11 +62,25 @@ class HomeFragment : BaseFragment() {
         call.enqueue(object : Callback<StatsModel> {
             override fun onFailure(call: Call<StatsModel>?, t: Throwable?) {
                 toast("Response failure")
+                mOnlineBot.visibility = View.GONE
+                mResponseError.visibility = View.VISIBLE
             }
 
             override fun onResponse(call: Call<StatsModel>?, response: Response<StatsModel>?) {
                 if (response!!.isSuccessful) {
+                    onlineBotAnimation()
+                    mOnlineBot.visibility = View.VISIBLE
+                    mResponseError.visibility = View.GONE
+
                     val dataList = response.body().data
+
+                    for (i in dataList.indices.iterator()) {
+                        val stats = dataList[i].stats.toString()
+                        val args = Bundle()
+                        args.putString("stats", stats)
+
+                    }
+
                     adapter.getDataIntoItemlist(dataList)
                     adapter.notifyDataSetChanged()
 

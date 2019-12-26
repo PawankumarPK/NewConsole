@@ -12,12 +12,13 @@
         android:layout_height="wrap_content"
         android:background="@drawable/jetbrain_gradient">
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/mBackpress"
+                android:id="@+id/mBackButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_arrow_back"
@@ -27,13 +28,13 @@
                 android:id="@+id/mToolbarTextview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/mBackpress"
+                android:layout_toRightOf="@+id/mBackButton"
                 android:text="@string/home"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                android:layout_toEndOf="@+id/mBackpress"
+                android:layout_toEndOf="@+id/mBackButton"
                 android:layout_marginLeft="20dp" />
 
 
@@ -41,6 +42,7 @@
 
 
     </androidx.appcompat.widget.Toolbar>
+
 
     <FrameLayout
         android:id="@+id/mFrameContainer"
