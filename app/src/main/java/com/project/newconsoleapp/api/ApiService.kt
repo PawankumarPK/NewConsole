@@ -1,4 +1,4 @@
-package ai.jetbrain.arya.api
+package com.project.newconsoleapp.api
 
 import com.project.newconsoleapp.api.models.StatsModel
 import retrofit2.Call

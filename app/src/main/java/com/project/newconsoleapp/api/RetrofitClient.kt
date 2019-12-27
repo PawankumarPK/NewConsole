@@ -1,6 +1,5 @@
 package com.project.newconsoleapp.api
 
-import ai.jetbrain.arya.api.ApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

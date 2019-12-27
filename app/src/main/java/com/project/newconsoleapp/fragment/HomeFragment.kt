@@ -2,6 +2,7 @@ package com.project.newconsoleapp.fragment
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,11 +31,7 @@ class HomeFragment : BaseFragment() {
     private val TAG = "HomeFragment"
     private lateinit var adapter: RecyclerViewAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -48,6 +45,16 @@ class HomeFragment : BaseFragment() {
         retrofitCallbacks()
 
     }
+
+    fun onlineBotFunction(string: String){
+        mOnlineBot.text = "Online Bots: $string"
+        Log.d(TAG,string)
+    }
+
+    /*fun macIdFunction(data : String){
+        adapter.getDataIntoItemlist(data)
+        adapter.notifyDataSetChanged()
+    }*/
 
     private fun loadRecyclerView() {
         adapter = RecyclerViewAdapter()
@@ -69,23 +76,15 @@ class HomeFragment : BaseFragment() {
             override fun onResponse(call: Call<StatsModel>?, response: Response<StatsModel>?) {
                 if (response!!.isSuccessful) {
                     onlineBotAnimation()
+
                     mOnlineBot.visibility = View.VISIBLE
                     mResponseError.visibility = View.GONE
 
                     val dataList = response.body().data
 
-                    for (i in dataList.indices.iterator()) {
-                        val stats = dataList[i].stats.toString()
-                        val args = Bundle()
-                        args.putString("stats", stats)
+                       adapter.getDataIntoItemlist(dataList)
+                       adapter.notifyDataSetChanged()
 
-                    }
-
-                    adapter.getDataIntoItemlist(dataList)
-                    adapter.notifyDataSetChanged()
-
-                    val onlineBot = response.body().count
-                    mOnlineBot.text = "Online Bots: $onlineBot"
 
                 }
             }
