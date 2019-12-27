@@ -9,33 +9,33 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/mToolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/jetbrain_gradient">
+        android:layout_height="?attr/actionBarSize">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/mBackButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:src="@drawable/ic_arrow_back"
                 android:contentDescription="@null"/>
 
             <TextView
                 android:id="@+id/mToolbarTextview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/mBackButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="@string/home"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:layout_toEndOf="@+id/mBackButton"
-                android:layout_marginLeft="20dp" />
+                android:layout_marginLeft="17dp"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/comfortaa_regular"
+                android:textColor="@color/colorPrimary"
+                android:layout_toRightOf="@+id/mBackButton"
+                android:textSize="20sp"
+                android:layout_toEndOf="@+id/mBackButton" />
 
 
         </RelativeLayout>
@@ -43,11 +43,17 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <View
+        android:id="@+id/mView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/mToolbar"/>
 
     <FrameLayout
         android:id="@+id/mFrameContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/mToolbar" />
+        android:layout_below="@+id/mView" />
 
 </RelativeLayout>
