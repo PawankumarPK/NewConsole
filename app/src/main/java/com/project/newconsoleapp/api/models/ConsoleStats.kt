@@ -2,7 +2,7 @@ package com.project.newconsoleapp.api.models
 
 import com.google.gson.annotations.SerializedName
 
-class Stats {
+class ConsoleStats {
 
     @SerializedName("battery")
     var battery : Battery = Battery()

@@ -1,8 +1,14 @@
 package com.project.newconsoleapp.fragment
 
 
+import com.project.newconsoleapp.R
+import com.project.newconsoleapp.adapter.RecyclerViewAdapter
+import com.project.newconsoleapp.api.RetrofitClient
+import com.project.newconsoleapp.api.models.StatsModel
+import com.project.newconsoleapp.objects.OnlineBots
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +17,6 @@ import android.view.animation.Animation
 import android.view.animation.Interpolator
 import android.view.animation.LinearInterpolator
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.project.newconsoleapp.R
-import com.project.newconsoleapp.adapter.RecyclerViewAdapter
-import com.project.newconsoleapp.api.RetrofitClient
-import com.project.newconsoleapp.api.models.StatsModel
-import com.project.newconsoleapp.fragment.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
@@ -44,17 +45,17 @@ class HomeFragment : BaseFragment() {
         loadRecyclerView()
         retrofitCallbacks()
 
+        mOnlineBot.text = "Online Bots: ${OnlineBots.onlineBot}"
+
     }
 
-    fun onlineBotFunction(string: String){
-        mOnlineBot.text = "Online Bots: $string"
-        Log.d(TAG,string)
-    }
+    fun onlineBotFunction(online: String) {
+        if (mOnlineBot != null) {
+            OnlineBots.onlineBot = "Online Bots: $online"
+            mOnlineBot.text = OnlineBots.onlineBot
+        }
 
-    /*fun macIdFunction(data : String){
-        adapter.getDataIntoItemlist(data)
-        adapter.notifyDataSetChanged()
-    }*/
+    }
 
     private fun loadRecyclerView() {
         adapter = RecyclerViewAdapter()
@@ -63,6 +64,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun retrofitCallbacks() {
+
         val api = RetrofitClient.apiService
         val call = api.stats()
 
@@ -75,21 +77,30 @@ class HomeFragment : BaseFragment() {
 
             override fun onResponse(call: Call<StatsModel>?, response: Response<StatsModel>?) {
                 if (response!!.isSuccessful) {
+                    //  toast("Response Success")
                     onlineBotAnimation()
 
                     mOnlineBot.visibility = View.VISIBLE
                     mResponseError.visibility = View.GONE
 
                     val dataList = response.body().data
-
-                       adapter.getDataIntoItemlist(dataList)
-                       adapter.notifyDataSetChanged()
-
+                    adapter.getDataIntoItemlist(dataList)
+                    adapter.notifyDataSetChanged()
 
                 }
+                /*runnable = object : Runnable {
+                    override fun run() {
+                        retrofitCallbacks()
+                        handler.postDelayed(this, 3000)
+                    }
+                }
+//Start
+                handler.postDelayed(runnable!!, 3000)
+            }*/
             }
-
         })
+
+
     }
 
     private fun onlineBotAnimation() {
@@ -100,5 +111,4 @@ class HomeFragment : BaseFragment() {
         animation.repeatMode = Animation.REVERSE
         mOnlineBot.startAnimation(animation)
     }
-
 }

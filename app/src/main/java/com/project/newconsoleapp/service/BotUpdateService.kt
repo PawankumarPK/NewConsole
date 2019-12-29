@@ -1,12 +1,13 @@
 package com.project.newconsoleapp.service
 
+import com.project.newconsoleapp.api.RetrofitClient
+import com.project.newconsoleapp.api.models.DataList
+import com.project.newconsoleapp.api.models.StatsModel
 import android.app.IntentService
 import android.content.Intent
 import android.os.Handler
 import android.util.Log
 import android.widget.Toast
-import com.project.newconsoleapp.api.RetrofitClient
-import com.project.newconsoleapp.api.models.StatsModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,8 +17,6 @@ import retrofit2.Response
  * Created by pawan on 27,December,2019
  */
 class BotUpdateService : IntentService("BotUpdateService") {
-
-    var macId: String? = null
 
     private fun retrofitCall() {
         val api = RetrofitClient.apiService
@@ -31,17 +30,18 @@ class BotUpdateService : IntentService("BotUpdateService") {
             override fun onResponse(call: Call<StatsModel>?, response: Response<StatsModel>?) {
                 if (response!!.isSuccessful) {
                     val count = response.body().count.toString()
-                    val mac = response.body().data
+
+                    /*val mac = response.body().data
                     for (i in mac.indices) {
-                        macId = mac[i].mac
-                        Log.d("===>>>", macId!!)
-                    }
+                       // macId = mac[i].mac
+                        macId = mac[i].mac as ArrayList<DataList>
+                        Log.d("===>>>", mac.toString())
+                    }*/
 
 
                     val intent = Intent()
                     intent.action = "ai.jetbrain.console"
                     intent.putExtra("onlineBot", count)
-                    intent.putExtra("macId", macId)
                     sendBroadcast(intent)
 
                 }

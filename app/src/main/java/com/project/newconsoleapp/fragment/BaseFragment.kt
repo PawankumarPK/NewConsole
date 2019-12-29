@@ -1,9 +1,10 @@
 package com.project.newconsoleapp.fragment
 
+import com.project.newconsoleapp.R
+import com.project.newconsoleapp.activity.BaseActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.project.newconsoleapp.activity.BaseActivity
 
 
 /**

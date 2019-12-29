@@ -5,15 +5,15 @@ import com.google.gson.annotations.SerializedName
 class DataList {
 
     @SerializedName("stats")
-    var stats: Stats = Stats()
+    var stats: ConsoleStats = ConsoleStats()
 
     @SerializedName("mac")
-    val mac : String? = null
+    val mac: String? = null
 
     @SerializedName("joinstamp")
-    var joinstamp: Int? = 0
+    var joinstamp: Long? = 0
 
     @SerializedName("updatestamp")
-    var updatestamp: Int? = 0
+    var updatestamp: Long? = 0
 
 }

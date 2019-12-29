@@ -21,13 +21,13 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#fff"
+                android:layout_height="match_parent"
+                android:background="@drawable/grey_gradients"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Mac :"
-                android:textColor="@color/black"
-                android:textSize="20sp"
+                android:text="@string/mac"
+                android:textColor="@drawable/button_text_color"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -51,16 +51,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#fff"
+                android:background="@drawable/grey_gradients"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Online Since :"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:text="@string/online_since"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/mOnlineSince"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -80,24 +79,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#fff"
+                android:background="@drawable/grey_gradients"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Last Update"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-
-            <TextView
-                android:id="@+id/mLastUpdate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/o"
-                android:textSize="23sp" />
-
+                android:text="Last Update :"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
 
@@ -110,13 +98,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#fff"
+                android:background="@drawable/grey_gradients"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Screens :"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:text="Stats :"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
 
             <TextView
@@ -141,17 +129,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:background="@drawable/grey_gradients"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/comfortaa_light"
                     android:gravity="center_horizontal"
-                    android:text="@string/battery"
-                    android:textColor="@color/black"
+                    android:text="Battery :"
+                    android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -179,7 +166,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="5"
                         android:gravity="end"
-                        android:text="0"
+                        android:text="@string/o"
                         android:textSize="23sp" />
 
                 </LinearLayout>
@@ -236,7 +223,8 @@
                         android:layout_gravity="center"
                         android:layout_weight="5"
                         android:gravity="end"
-                        android:text="@string/o"                        android:textSize="23sp" />
+                        android:text="@string/o"
+                        android:textSize="23sp" />
 
                 </LinearLayout>
 
@@ -252,7 +240,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="5"
-                        android:text="@string/o"
+                        android:text="CE : "
                         android:textSize="23sp" />
 
 

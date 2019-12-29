@@ -1,15 +1,15 @@
 package com.project.newconsoleapp.activity
 
-import android.content.Intent
-import android.content.IntentFilter
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.project.newconsoleapp.R
 import com.project.newconsoleapp.api.RetrofitClient
 import com.project.newconsoleapp.fragment.HomeFragment
 import com.project.newconsoleapp.receiver.BotUpdateReceiver
 import com.project.newconsoleapp.service.BotUpdateService
 import com.project.newconsoleapp.utils.Helper
+import android.content.Intent
+import android.content.IntentFilter
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 
 /**

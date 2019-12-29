@@ -1,15 +1,17 @@
 package com.project.newconsoleapp.fragment
 
 
+import com.project.newconsoleapp.R
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
-import com.project.newconsoleapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_status.*
+import kotlinx.android.synthetic.main.fragment_status.mMac
+import kotlinx.android.synthetic.main.fragment_status.mOnlineSince
 import java.time.Instant
 import java.util.regex.Pattern
 

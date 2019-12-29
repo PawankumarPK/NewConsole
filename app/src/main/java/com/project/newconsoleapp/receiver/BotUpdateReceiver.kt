@@ -1,11 +1,13 @@
 package com.project.newconsoleapp.receiver
 
+import com.project.newconsoleapp.fragment.HomeFragment
+import com.project.newconsoleapp.objects.OnlineBots
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.os.Bundle
-import com.project.newconsoleapp.fragment.HomeFragment
+
 
 
 /**
@@ -22,12 +24,10 @@ class BotUpdateReceiver : BroadcastReceiver() {
     override fun onReceive(p0: Context?, intent: Intent?) {
 
         val bot = intent!!.getStringExtra("onlineBot")
-  //      val macId= intent.getStringExtra("macId")
-//        Log.d("---->>>",macId.toString())
+        OnlineBots.onlineBot  = bot
 
         if (loadedFragment != null) {
-            loadedFragment!!.onlineBotFunction(bot.toString())
-            //loadedFragment!!.macIdFunction()
+            loadedFragment!!.onlineBotFunction(bot!!.toString())
 
         }
 
