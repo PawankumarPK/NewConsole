@@ -2,16 +2,18 @@
     <string name="app_name">Console</string>
 
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="amro">Amro</string>
     <string name="arya">Arya</string>
     <string name="fragment">Status</string>
     <string name="home">Home</string>
-    <string name="mac">Mac :</string>
     <string name="o">0</string>
     <string name="CE">CE</string>
     <string name="soc">SOC :</string>
     <string name="online_since">Online Since :</string>
     <string name="stats">Stats :</string>
     <string name="battery">Battery :</string>
+    <string name="mac">Mac :</string>
+    <string name="screens">Screens :</string>
+    <string name="last_update">Last Update :</string>
+
 </resources>

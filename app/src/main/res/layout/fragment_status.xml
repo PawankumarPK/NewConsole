@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/bgColor"
         android:padding="5dp">
 
         <androidx.cardview.widget.CardView
@@ -23,11 +24,11 @@
                 android:id="@+id/mAmro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="@color/white"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Mac :"
-                android:textColor="@color/black"
+                android:text="@string/mac"
+                android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Screens"
+                android:text="@string/screens"
                 android:textSize="@dimen/setDataSizes" />
 
 
@@ -52,11 +53,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="@color/white"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Online Since :"
-                android:textColor="@color/black"
+                android:text="@string/online_since"
+                android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -80,11 +81,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#fff"
+                android:background="@color/white"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Last Update"
-                android:textColor="@color/black"
+                android:text="@string/last_update"
+                android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -107,11 +108,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#fff"
+                android:background="@color/white"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center_horizontal"
-                android:text="Screens :"
-                android:textColor="@color/black"
+                android:text="@string/screens"
+                android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -147,7 +148,7 @@
                     android:fontFamily="@font/comfortaa_light"
                     android:gravity="center_horizontal"
                     android:text="@string/battery"
-                    android:textColor="@color/black"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
