@@ -27,7 +27,7 @@ class BotUpdateReceiver : BroadcastReceiver() {
         OnlineBots.onlineBot  = bot
 
         if (loadedFragment != null) {
-            loadedFragment!!.onlineBotFunction(bot!!.toString())
+           // loadedFragment!!.onlineBotFunction(bot!!.toString())
 
         }
 

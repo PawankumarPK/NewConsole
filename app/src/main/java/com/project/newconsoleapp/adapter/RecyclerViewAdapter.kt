@@ -65,7 +65,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
 
     }
 
-    fun getDataIntoItemlist(list: ArrayList<DataList>) {
+    fun getItemlist(list: ArrayList<DataList>) {
         itemList = list
 
     }

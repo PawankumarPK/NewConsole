@@ -1,12 +1,6 @@
 package com.project.newconsoleapp.fragment
 
 
-import com.project.newconsoleapp.R
-import com.project.newconsoleapp.adapter.RecyclerViewAdapter
-import com.project.newconsoleapp.api.RetrofitClient
-import com.project.newconsoleapp.api.models.StatsModel
-import com.project.newconsoleapp.objects.OnlineBots
-import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -17,11 +11,17 @@ import android.view.animation.Animation
 import android.view.animation.Interpolator
 import android.view.animation.LinearInterpolator
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.project.newconsoleapp.R
+import com.project.newconsoleapp.adapter.RecyclerViewAdapter
+import com.project.newconsoleapp.api.RetrofitClient
+import com.project.newconsoleapp.api.models.StatsModel
+import com.project.newconsoleapp.objects.OnlineBots
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 /**
  * Created by pawan on 27,November,2019
@@ -40,11 +40,14 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        baseActivity.mToolbar.visibility = View.GONE
+        onlineBotAnimation()
 
+        mOnlineBot.visibility = View.VISIBLE
+        mResponseError.visibility = View.GONE
+
+        baseActivity.mToolbar.visibility = View.GONE
         loadRecyclerView()
         retrofitCallbacks()
-
         mOnlineBot.text = "Online Bots: ${OnlineBots.onlineBot}"
 
     }
@@ -78,29 +81,21 @@ class HomeFragment : BaseFragment() {
             override fun onResponse(call: Call<StatsModel>?, response: Response<StatsModel>?) {
                 if (response!!.isSuccessful) {
                     //  toast("Response Success")
-                    onlineBotAnimation()
-
-                    mOnlineBot.visibility = View.VISIBLE
-                    mResponseError.visibility = View.GONE
 
                     val dataList = response.body().data
-                    adapter.getDataIntoItemlist(dataList)
+                    adapter.getItemlist(dataList)
                     adapter.notifyDataSetChanged()
 
+                    Handler().postDelayed({
+                        if (mOnlineBot != null)
+                            retrofitCallbacks()
+                    }, 3000)
                 }
-                /*runnable = object : Runnable {
-                    override fun run() {
-                        retrofitCallbacks()
-                        handler.postDelayed(this, 3000)
-                    }
-                }
-//Start
-                handler.postDelayed(runnable!!, 3000)
-            }*/
+
             }
+
+
         })
-
-
     }
 
     private fun onlineBotAnimation() {
@@ -112,3 +107,17 @@ class HomeFragment : BaseFragment() {
         mOnlineBot.startAnimation(animation)
     }
 }
+
+
+/*    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        val model = ViewModelProviders.of(activity!!).get(MainActivityViewModel::class.java)
+        val myRandomNumber = model.number
+        myRandomNumber.observe(this, Observer<String> { s -> mOnlineBot.text = s })
+        mOnlineBot.setOnClickListener {
+            model.createNumber()
+            Log.i(TAG, "Data update in UI")
+        }
+    }*/
+
